@@ -1,0 +1,31 @@
+{
+  "name": "cap_app",
+  "version": "1.0.0",
+  "description": "Online App Form",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "mocha"
+  },
+  "author": "PBentley",
+  "license": "ISC",
+  "dependencies": {
+    "anychart": "^8.0.1",
+    "body-parser": "^1.18.2",
+    "browserify": "^14.5.0",
+    "express": "^4.16.2",
+    "http": "0.0.0",
+    "mysql": "^2.15.0",
+    "mysql2": "^1.4.2",
+    "nodemailer": "^4.3.1",
+    "path": "^0.12.7",
+    "sequelize": "^4.22.5"
+  },
+  "devDependencies": {
+    "chai": "^4.1.2",
+    "mocha": "^4.0.1",
+    "zombie": "^5.0.7"
+  }
+}
