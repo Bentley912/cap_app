@@ -1,4 +1,6 @@
 $(document).ready(function(){ 
+
+    $('.alert').hide();
     $('button').click(function(){
         event.preventDefault();
         var first_name = $('#first_name_input').val();
@@ -22,6 +24,7 @@ $(document).ready(function(){
             console.log(err)
             else
             console.log(res)
+            $('.alert').show();
         })
     })
 });
