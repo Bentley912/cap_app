@@ -5,8 +5,19 @@ var Browser = require('zombie');
 
 process.env.NODE_ENV = 'test';
 
+Browser.localhost('cap app', 3000);
+
 describe('form page', function(){
-    it('should show a form page', function(){
+    const browser = new Browser();
+    
+    before(function(done) {
+        browser.visit(done);
+    });
+
+    describe('should show a form page', function(){
+        it('should be succesful', function(){
+            browser.assert.success();
+        })
     });
     it ('should not accept invalid email');
     it ('should accept submissions');

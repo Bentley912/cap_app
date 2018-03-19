@@ -1,5 +1,6 @@
 $(document).ready(function(){ 
     $('.alert').hide();
+    
     $('.myForm').submit(function(){
         var applicant ={};
         applicant.first_name = $('#first_name_input').val();
@@ -15,7 +16,6 @@ $(document).ready(function(){
         postApplicant(applicant);
     })
 
-
     function postApplicant (reqContent){
         $.post("/api/applicants", {reqContent}).then(function(err,res){
             if(err)
@@ -24,6 +24,5 @@ $(document).ready(function(){
             console.log(res)
             $('.alert').show();
         })
-    }
-   
+    }   
 });
