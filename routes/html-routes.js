@@ -17,4 +17,7 @@ module.exports = function(app) {
     res.sendFile(path.join(__dirname + "/../public/admin.html"));    
   });   
   
+  app.get("/emergency_contact", function(req, res) {
+    res.sendFile(path.join(__dirname + "/../public/emergency.html"));    
+  }); 
 }
