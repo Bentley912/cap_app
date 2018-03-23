@@ -12,11 +12,12 @@ $(document).ready(function(){
         applicant.state = $('#state_input').val();
         applicant.last4 = $('#last4_input').val();
         console.log(applicant);
-        // postApplicant(applicant);
+        // postApplicant(applicant);                
     })
 
     $('.demo_button').on('click', function(){
-        event.preventDefault();
+        
+        sessionStorage.setItem('first_name', $('#first_name_input').val())
     })
 
     function postApplicant (applicant){

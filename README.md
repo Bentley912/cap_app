@@ -1,4 +1,4 @@
-# cap_app
+# CAP_APP
 
 
 #TODO
@@ -9,6 +9,8 @@
 -- Each part of the application exists as a seperate HTML page
 -- When user Submits complete form, push data from sessionStorage to DB 
 -- sessisonStorage keys/properties should mirror the DB properties 
+-- Add logic to test for sessionStorage, users may be using an older browser 
+-- Should we use sessionStorage ??
 
 
 
@@ -20,7 +22,7 @@
 -- Income 
 -- Employment Background 
 -- Job Skills Questionnaire 
--- JOb Interest 
+-- Job Interest 
 -- Barriers 
 -- Other Background Questions 
 -- Terms of Agreement/ Signature Page 
