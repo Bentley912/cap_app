@@ -21,7 +21,7 @@ module.exports = function(sequelize, DataTypes){
         },
         apt: {
             type:DataTypes.STRING,
-        }
+        }, 
     })
     return Applicant;
 }

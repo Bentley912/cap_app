@@ -44,59 +44,59 @@ module.exports = function(app) {
 //     });
 //   });
   // POST route for saving a new post
-  app.post("/api/applicants", function(req, res) {
+    app.post("/api/applicants", function(req, res) {
 
-    console.log(req.body);
-    db.Applicant.create(req.body.applicant)
-    .then(function(appPost) {
-      res.json(appPost);
-    // }).then(function(){
-    //     //mail details for nodemailer
-    //     let mailOptions = {
-    //         from: '"notifications@cap.org" <app@cap.org>', // sender address
-    //         to: 'zu4motzrieoumqo5@ethereal.email', // list of receivers
-    //         subject: 'Application Submitted', // Subject line
-    //         text: req.body.firstname + ' ' + req.body.last_name + ' just sent you a message!', // plain text body
-    //         html: '<b>'+req.body.first_name+'</b>' + '</br>' +
-    //         ''
-    //          // html body
-    //     };
-    //     transporter.sendMail(mailOptions, (error, info) => {
-    //         if (error) {
-    //             return console.log(error);
-    //         }
-    //         console.log('Message sent: %s', info.messageId);
-    //         // Preview only available when sending through an Ethereal account
-    //         console.log('Preview URL: %s', nodemailer.getTestMessageUrl(info));
-    //         // Message sent: <b658f8ca-6296-ccf4-8306-87d57a0b4321@blurdybloop.com>
-    //         // Preview URL: https://ethereal.email/message/WaQKMgKddxQDoou...
-    //     });
-    // });
-      });
-  // DELETE route for deleting posts
-//   app.delete("/api/posts/:id", function (req, res) {
-//     console.log(req);
-//     db.Post.destroy({
-//       where: {
-//         id: req.params.id
-//       }
-//     })
-//     .then(function(dbPost) {
-//       res.json(dbPost);
-//     });
-//   });
-  // PUT route for updating posts
-//   app.put("/api/posts", function(req, res) {
-//     db.Post.update(req.body,
-//       {
-//         where: {
-//           id: req.body.id
-//         }
-//       })
-//     .then(function(dbPost) {
-//       res.json(dbPost);
-//     });
-//   });
-})
+      console.log(req.body);
+      db.Applicant.create(req.body.applicant)
+      .then(function(appPost) {
+        res.json(appPost);
+      // }).then(function(){
+      //     //mail details for nodemailer
+      //     let mailOptions = {
+      //         from: '"notifications@cap.org" <app@cap.org>', // sender address
+      //         to: 'zu4motzrieoumqo5@ethereal.email', // list of receivers
+      //         subject: 'Application Submitted', // Subject line
+      //         text: req.body.firstname + ' ' + req.body.last_name + ' just sent you a message!', // plain text body
+      //         html: '<b>'+req.body.first_name+'</b>' + '</br>' +
+      //         ''
+      //          // html body
+      //     };
+      //     transporter.sendMail(mailOptions, (error, info) => {
+      //         if (error) {
+      //             return console.log(error);
+      //         }
+      //         console.log('Message sent: %s', info.messageId);
+      //         // Preview only available when sending through an Ethereal account
+      //         console.log('Preview URL: %s', nodemailer.getTestMessageUrl(info));
+      //         // Message sent: <b658f8ca-6296-ccf4-8306-87d57a0b4321@blurdybloop.com>
+      //         // Preview URL: https://ethereal.email/message/WaQKMgKddxQDoou...
+      //     });
+      // });
+        });
+    // DELETE route for deleting posts
+  //   app.delete("/api/posts/:id", function (req, res) {
+  //     console.log(req);
+  //     db.Post.destroy({
+  //       where: {
+  //         id: req.params.id
+  //       }
+  //     })
+  //     .then(function(dbPost) {
+  //       res.json(dbPost);
+  //     });
+  //   });
+    // PUT route for updating posts
+  //   app.put("/api/posts", function(req, res) {
+  //     db.Post.update(req.body,
+  //       {
+  //         where: {
+  //           id: req.body.id
+  //         }
+  //       })
+  //     .then(function(dbPost) {
+  //       res.json(dbPost);
+  //     });
+  //   });
+    })
 
 };

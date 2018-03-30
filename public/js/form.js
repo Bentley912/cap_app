@@ -16,7 +16,6 @@ $(document).ready(function(){
     })
 
     $('.demo_button').on('click', function(){
-        
         sessionStorage.setItem('first_name', $('#first_name_input').val())
     })
 
