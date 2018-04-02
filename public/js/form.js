@@ -14,9 +14,18 @@ $(document).ready(function(){
         console.log(applicant);
         // postApplicant(applicant);                
     })
+    
+
+    // finds input and saves it to local storage with same name for property
+    var saveData = function(name){
+        var value = $("#" + name + "").val();
+        sessionStorage.setItem("'"+name+"'", value)
+        console.log(sessionStorage);
+    }
+
 
     $('.demo_button').on('click', function(){
-        sessionStorage.setItem('first_name', $('#first_name_input').val())
+        saveData('first_name');
     })
 
     function postApplicant (applicant){
