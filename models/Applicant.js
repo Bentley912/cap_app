@@ -40,6 +40,33 @@ module.exports = function(sequelize, DataTypes){
         race:
         {
             type: DataTypes.STRING
+        },
+        citizen: {
+            type: DataTypes.STRING
+        },
+        work_auth: {
+            type:DataTypes.STRING
+        },
+        sel_service: {
+            type:DataTypes.STRING
+        },
+        veteran: {
+            type:DataTypes.STRING
+        },
+        source: {
+            type:DataTypes.STRING
+        },
+        marital_status: {
+            type:DataTypes.STRING
+        },
+        primary_language: {
+            type:DataTypes.STRING
+        },
+        driving: {
+            type:DataTypes.STRING
+        },
+        license: {
+            type:DataTypes.STRING
         }
     })
     return Applicant;

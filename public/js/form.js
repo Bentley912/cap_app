@@ -20,13 +20,13 @@ $(document).ready(function(){
     var saveData = function(){
         for (var i=0;i < arguments.length; i++){
             var value = $("#" + arguments[i] + "").val();
-            sessionStorage.setItem("'"+arguments[i]+"'", value)          
+            sessionStorage.setItem( arguments[i], value)          
         }
         console.log(sessionStorage);
     }
 
     $('.demo_button').on('click', function(){
-        saveData('first_name', 'last_name', 'middle', 'birth_date', 'street', 'apt', 'city', 'state', 'last4', 'phone', 'email','alt_phone', 'gender', 'ethnicity','race');
+        saveData('first_name', 'last_name', 'middle', 'birth_date', 'street', 'apt', 'city', 'state', 'last4', 'phone', 'email','alt_phone', 'gender', 'ethnicity','race', 'citizen', 'work_auth', 'sel_service', 'veteran', 'source', 'marital_status', 'primary_language', 'driving', 'license');
     })
 
     function postApplicant (applicant){
