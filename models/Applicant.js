@@ -22,6 +22,25 @@ module.exports = function(sequelize, DataTypes){
         apt: {
             type:DataTypes.STRING,
         }, 
+        phone: {
+            type:DataTypes.STRING,
+        }, 
+        email: {
+            type:DataTypes.STRING
+        },
+        alt_phone: {
+            type:DataTypes.STRING
+        }, 
+        gender: {
+            type:DataTypes.STRING
+        },
+        ethnicity: {
+            type: DataTypes.STRING
+        },
+        race:
+        {
+            type: DataTypes.STRING
+        }
     })
     return Applicant;
 }

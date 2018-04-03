@@ -26,7 +26,7 @@ $(document).ready(function(){
     }
 
     $('.demo_button').on('click', function(){
-        saveData('first_name', 'last_name', 'middle');
+        saveData('first_name', 'last_name', 'middle', 'birth_date', 'street', 'apt', 'city', 'state', 'last4', 'phone', 'email','alt_phone', 'gender', 'ethnicity','race');
     })
 
     function postApplicant (applicant){
@@ -40,12 +40,7 @@ $(document).ready(function(){
     }   
 });
 
-//CREATE FUNCTION TO STORE KEY AND VALUE INTO SESSION STORAGE 
-// VAR storeLocal = function (key, value){
-//     window.setStorage('key', value)
-// }
 
-// ***Example: storeLocal('first_name', first_name);
 
 
 // ***** SESSION STORAGE WILL AUTOMATICALLY STORE ANY VALUE AS STRINGS. MUST INCLUDE SOME LOGIC TO PARSE BACK TO 
