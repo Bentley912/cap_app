@@ -22,45 +22,149 @@
             <fieldset>
               <legend>Demographic Info</legend>
               <div class="form-group">
-                <label for="first_name_input">First Name</label>
+                <label for="first_name">First Name</label>
                 <input type="text" class="form-control" id="first_name" placeholder="First Name" name="first_name" autocomplete="off" required>
               </div>
               <div class="form-group">
-                <label for="last_name_input">Last Name</label>
-                <input type="text" class="form-control" id="last_name_input"  placeholder="Last Name" autocomplete="off" required>
+                <label for="last_name">Last Name</label>
+                <input type="text" class="form-control" id="last_name"  placeholder="Last Name" autocomplete="off" required>
               </div>
               <div class="form-group">
-                <label for="middle_input">Middle Initial</label>
-                <input type="text" class="form-control" id="middle_input"  placeholder="Middle Initial" autocomplete="off" >
+                <label for="middle">Middle Initial</label>
+                <input type="text" class="form-control" id="middle"  placeholder="Middle Initial" autocomplete="off" >
               </div>
               <div class="form-group">
-                <label for="birth_date_input">Birth Date</label>
-                <input type="date" class="form-control" id="birth_date_input"  placeholder="Last Name" autocomplete="off" required="true">
+                <label for="birth_date">Birth Date</label>
+                <input type="date" class="form-control" id="birth_date"  placeholder="Last Name" autocomplete="off" required="true">
               </div>
               <div class="form-group">
-                <label for="street_input">Street Address</label>
-                <input type="text" class="form-control" id="street_input"  placeholder="123 Somewhere St, City, State" autocomplete="off" required>
+                <label for="street">Street Address</label>
+                <input type="text" class="form-control" id="street"  placeholder="123 Somewhere St, City, State" autocomplete="off" required>
               </div>
               <div class="form-group">
-                <label for="apt_input">Apartment Number</label>
-                <input type="text" class="form-control" id="apt_input"  placeholder="Apartment Number" autocomplete="off" >
+                <label for="apt">Apartment Number</label>
+                <input type="text" class="form-control" id="apt"  placeholder="Apartment Number" autocomplete="off" >
               </div>
               <div class="form-group">
-                <label for="city_input">City</label>
-                <input type="text" class="form-control" id="city_input"  placeholder="City" autocomplete="off" required>
+                <label for="city">City</label>
+                <input type="text" class="form-control" id="city"  placeholder="City" autocomplete="off" required>
               </div>
               <div class="form-group">
-                <label for="state_input">State</label>
-                <input type="text" class="form-control" id="state_input"  placeholder="State" autocomplete="off" required>
+                <label for="state">State</label>
+                <input type="text" class="form-control" id="state"  placeholder="State" autocomplete="off" required>
               </div>
               <div class="form-group">
-                <label for="last4_input">Last 4 Numbers of SSN</label>
-                <input type="text" class="form-control" id="last4_input"  placeholder="0000" autocomplete="off" required>
+                <label for="last4">Last 4 Numbers of SSN</label>
+                <input type="text" class="form-control" id="last4"  placeholder="0000" autocomplete="off" required>
               </div>
+              <div class="form-group">
+                <label for="phone">Phone Number</label>
+                <input type="phone" class="form-control" id="phone" placeholder="Phone Number" required>
+              </div>
+              <div class="form-group">
+                <label for="email">Email address</label>
+                <input type="email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="Enter email" required>
+              </div>
+              <div class="form-group">
+                <label for="alt_phone">Alternate Phone Number</label>
+                <input type="phone" class="form-control" id="alt_phone" placeholder="Phone Number" >
+              </div>
+              <div class="form-group">
+                <label for="gender">Gender</label>
+                <select class="form-control" id="gender">
+                  <option>Male</option>
+                  <option>Female</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="ethnicity">Are you Hispanic or Latinx ?</label>
+                <select class="form-control" id="ethnicity">
+                  <option>YES</option>
+                  <option>NO</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="race">Race</label>
+                <select class="form-control" id="race">
+                  <option>African American</option>
+                  <option>Latinx or Hispanic</option>
+                  <option>Native American</option>
+                  <option>Caucasion</option>
+                  <option>Asian/Pacific Islander</option>
+                  <option>Other</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="citizen">Are you a U.S. Citizen?</label>
+                <select class="form-control" id="citizen">
+                  <option>YES</option>
+                  <option>NO</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="work_auth">If no, are you authorized to work in the U.S.?</label>
+                <select class="form-control" id="work_auth">
+                    <option>---</option>
+                  <option>YES</option>
+                  <option>NO</option>
+                </select>
+              </div>
+              <div class="form-group">
+                  <label for="sel_service">If you are a male, have you registered for Selective Service ?</label>
+                  <select class="form-control" id="sel_service">
+                      <option>---</option>
+                    <option>YES</option>
+                    <option>NO</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                    <label for="veteran">Are you a Veteran</label>
+                    <select class="form-control" id="veteran">
+                      <option>YES</option>
+                      <option>NO</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="source">How did you hear about the Educate, Empower and Employ program ?</label>
+                    <select class="form-control" id="source">
+                      <option>Family/Friend</option>
+                      <option>Flyer/Banner</option>
+                      <option>Facebook</option>
+                      <option>Step Up</option>
+                      <option>Newspaper</option>
+                      <option>other</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="marital_status">Marital Status</label>
+                    <select class="form-control" id="marital_status">
+                      <option>SINGLE</option>
+                      <option>MARRIED</option>
+                      <option>Widowed/Divorced</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="primary_language">What is the primary language in Your Household ?</label>
+                    <input type="text" class="form-control" id="primary_language"  placeholder="0000" autocomplete="off" >
+                  </div>
+                  <div class="form-group">
+                      <label for="driving">Do You Know How to Drive ?</label>
+                      <select class="form-control" id="driving">
+                        <option>YES</option>
+                        <option>NO</option>
+                      </select>
+                  </div>
+                  <div class="form-group">
+                      <label for="license">Do You Have a Valid Driver's License ?</label>
+                      <select class="form-control" id="license">
+                        <option>YES</option>
+                        <option>NO</option>
+                      </select>
+                  </div>
               <div class="alert alert-success" role="alert">
                 <strong>Well done!</strong> You successfully read this important alert message.
               </div>
-            
+
             </fieldset> 
         </form>
         <button class="btn btn-success demo_button"><a href="/emergency_contact">NEXT</a></button>

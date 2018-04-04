@@ -17,15 +17,16 @@ $(document).ready(function(){
     
 
     // finds input and saves it to local storage with same name for property
-    var saveData = function(name){
-        var value = $("#" + name + "").val();
-        sessionStorage.setItem("'"+name+"'", value)
+    var saveData = function(){
+        for (var i=0;i < arguments.length; i++){
+            var value = $("#" + arguments[i] + "").val();
+            sessionStorage.setItem( arguments[i], value)          
+        }
         console.log(sessionStorage);
     }
 
-
     $('.demo_button').on('click', function(){
-        saveData('first_name');
+        saveData('first_name', 'last_name', 'middle', 'birth_date', 'street', 'apt', 'city', 'state', 'last4', 'phone', 'email','alt_phone', 'gender', 'ethnicity','race', 'citizen', 'work_auth', 'sel_service', 'veteran', 'source', 'marital_status', 'primary_language', 'driving', 'license');
     })
 
     function postApplicant (applicant){
@@ -39,12 +40,7 @@ $(document).ready(function(){
     }   
 });
 
-//CREATE FUNCTION TO STORE KEY AND VALUE INTO SESSION STORAGE 
-// VAR storeLocal = function (key, value){
-//     window.setStorage('key', value)
-// }
 
-// ***Example: storeLocal('first_name', first_name);
 
 
 // ***** SESSION STORAGE WILL AUTOMATICALLY STORE ANY VALUE AS STRINGS. MUST INCLUDE SOME LOGIC TO PARSE BACK TO 
