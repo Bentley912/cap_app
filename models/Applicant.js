@@ -67,7 +67,16 @@ module.exports = function(sequelize, DataTypes){
         },
         license: {
             type:DataTypes.STRING
-        }
+        },
+        contact_name: {
+            type:DataTypes.STRING
+        },
+        contact_phone: {
+            type:DataTypes.STRING
+        },
+        contact_address: {
+            type:DataTypes.STRING
+        } 
     })
     return Applicant;
 }
