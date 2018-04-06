@@ -19,7 +19,7 @@ $(document).ready(function(){
     // finds input and saves it to local storage with same name for property
     var saveData = function(){
         for (var i=0;i < arguments.length; i++){
-            var value = $("#" + arguments[i] + "").val();
+            var value = $("#" + arguments[i] + "").val(); 
             sessionStorage.setItem( arguments[i], value)          
         }
         console.log(sessionStorage);
@@ -27,6 +27,10 @@ $(document).ready(function(){
 
     $('.demo_button').on('click', function(){
         saveData('first_name', 'last_name', 'middle', 'birth_date', 'street', 'apt', 'city', 'state', 'last4', 'phone', 'email','alt_phone', 'gender', 'ethnicity','race', 'citizen', 'work_auth', 'sel_service', 'veteran', 'source', 'marital_status', 'primary_language', 'driving', 'license');
+    })
+
+    $('.contact_button').on('click', function(){
+        saveData('contact_name', 'contact_phone', 'contact_address')
     })
 
     function postApplicant (applicant){
