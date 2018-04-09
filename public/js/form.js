@@ -37,6 +37,10 @@ $(document).ready(function(){
         saveData('household_adults', 'household_children', 'household_special_needs')
     })
 
+    $('.income_button').on('click', function(){
+        saveData('tanf_income', 'medicaid_income', 'snap_income', 'social_secuirty_income', 'other_income', 'yearly_income')
+    })
+
 
     function postApplicant (applicant){
         $.post("/api/applicants", {applicant}).then(function(err,res){

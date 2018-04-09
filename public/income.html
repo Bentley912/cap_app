@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+    <meta charset="UTF-8">
+    <title>CAP Application</title>
+    <!-- Latest compiled and minified CSS & JS -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/flatly/bootstrap.min.css" rel="stylesheet">
+
+    <script src="https://code.jquery.com/jquery.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    </head>
+    <body>
+        <div class="container">
+            <div class="jumbotron">
+                <h1>Chatham Apprentice Program Application</h1>
+                <p>Welcome to the Application Page for the Chatham Apprentice Program</p>
+                <p><a class="btn btn-primary btn-lg" href="#">Learn more</a></p>
+            </div>
+        </div>
+        <div class="container"> 
+            <form lpformnum="1" _lpchecked="1" class="emergency_form">
+                    <fieldset>
+                        <legend>Income Questions</legend>
+                        <small id="emailHelp" class="form-text text-muted">Do you receive or is someone in your house receiving, any of the following:</small>
+                        <div class="form-group">
+                                <label for="tanf_income">TANF</label>
+                                <select class="form-control" id="tanf_income">
+                                  <option>---</option>  
+                                  <option>YES</option>
+                                  <option>NO</option>
+                                </select>
+                        </div>
+                        <div class="form-group">
+                                <label for="medicaid_income">Medicaid</label>
+                                <select class="form-control" id="medicaid_income">
+                                  <option>---</option>  
+                                  <option>YES</option>
+                                  <option>NO</option>
+                                </select>
+                        </div>
+                        <div class="form-group">
+                                <label for="snap_income">SNAP/EBT</label>
+                                <select class="form-control" id="snap_income">
+                                  <option>---</option>
+                                  <option>YES</option>
+                                  <option>NO</option>
+                                </select>
+                        </div>
+                        <div class="form-group">
+                                <label for="social_security_income">Social Security/SSI</label>
+                                <select class="form-control" id="social_security_income">
+                                  <option>---</option>
+                                  <option>YES</option>
+                                  <option>NO</option>
+                                </select>
+                        </div>
+                        <div class="form-group">
+                                <label for="other_income">Other Sources of Income</label>
+                                <input type="phone" class="form-control" id="other_income" placeholder="Other Income" >
+                        </div>
+                        <div class="form-group">
+                                <label for="yearly_income">Please select the amount closest to your yearly income.</label>
+                                <select class="form-control" id="yearly_income">
+                                  <option>$0-$5,000</option>
+                                  <option>$5,001-$10,000</option>
+                                  <option>$10,001-$15,000</option>
+                                  <option>$15,001-$20,000</option>
+                                  <option>$20,001-$25,000</option>
+                                  <option>$25,001-$30,000</option>
+                                  <option>$30,001-$35,000</option>
+                                  <option>$35,001-$40,000</option>
+                                  <option>$40,000 or above</option>
+                                </select>
+                            </div>
+                    </fieldset>
+            </form>
+            <button class="btn btn-warning income_button">Save Data</button>
+            <button type="button" class="btn btn-link"><a href="income.html">Next Section</a></button>
+        </div>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.17.0/moment.min.js" type="text/javascript"></script>
+        <script src="./js/form.js" type="text/javascript"></script> 
+    </body>
+</html>
