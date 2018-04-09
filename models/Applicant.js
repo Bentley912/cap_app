@@ -76,7 +76,16 @@ module.exports = function(sequelize, DataTypes){
         },
         contact_address: {
             type:DataTypes.STRING
-        } 
+        },
+        household_adults: {
+            type:DataTypes.STRING
+        },
+        household_children: {
+            type:DataTypes.STRING
+        },
+        household_special_needs: {
+            type:DataTypes.STRING
+        }
     })
     return Applicant;
 }
