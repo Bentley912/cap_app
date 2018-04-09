@@ -33,6 +33,11 @@ $(document).ready(function(){
         saveData('contact_name', 'contact_phone', 'contact_address')
     })
 
+    $('.household_button').on('click', function(){
+        saveData('household_adults', 'household_children', 'household_special_needs')
+    })
+
+
     function postApplicant (applicant){
         $.post("/api/applicants", {applicant}).then(function(err,res){
             if(err)

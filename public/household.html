@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+    <meta charset="UTF-8">
+    <title>CAP Application</title>
+    <!-- Latest compiled and minified CSS & JS -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/flatly/bootstrap.min.css" rel="stylesheet">
+
+    <script src="https://code.jquery.com/jquery.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    </head>
+    <body>
+        <div class="container">
+            <div class="jumbotron">
+                <h1>Chatham Apprentice Program Application</h1>
+                <p>Welcome to the Application Page for the Chatham Apprentice Program</p>
+                <p><a class="btn btn-primary btn-lg" href="#">Learn more</a></p>
+            </div>
+        </div>
+            <div class="container"> 
+                <form lpformnum="1" _lpchecked="1" class="emergency_form">
+                    <fieldset>
+                        <legend>Household Information</legend>
+                        <small id="emailHelp" class="form-text text-muted">At the household entered earlier:</small>
+                        <div class="form-group">
+                            <label for="household_adults">How many adults live at this residence (self not included) ?</label>
+                            <input type="text" class="form-control" id="household_adults" placeholder="Household Adults" name="household_adults" autocomplete="off" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="household_children">How many children under the age of 18 ?</label>
+                            <input type="text" class="form-control" id="household_children" placeholder="Number of Children" name="first_name" autocomplete="off" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="household_special_needs">Do you or your family have any special needs that staff needs to know about ?</label>
+                            <input type="text" class="form-control" id="household_special_needs" placeholder="Please enter info here" name="first_name" autocomplete="off" required>
+                        </div>
+                    </fieldset>
+                </form>
+                <button class="btn btn-warning household_button">Save Data</button>
+                <button type="button" class="btn btn-link"><a href="income.html">Next Section</a></button>
+            </div>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.17.0/moment.min.js" type="text/javascript"></script>
+            <script src="./js/form.js" type="text/javascript"></script> 
+    </body>
+</html>
