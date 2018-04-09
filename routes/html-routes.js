@@ -20,7 +20,12 @@ module.exports = function(app) {
   app.get("/emergency_contact", function(req, res) {
     res.sendFile(path.join(__dirname + "/../public/emergency.html"));    
   }); 
+
   app.get("/household", function(req, res) {
     res.sendFile(path.join(__dirname + "/../public/household.html"));    
+  }); 
+
+  app.get("/income", function(req, res) {
+    res.sendFile(path.join(__dirname + "/../public/income.html"));    
   }); 
 }

@@ -85,7 +85,25 @@ module.exports = function(sequelize, DataTypes){
         },
         household_special_needs: {
             type:DataTypes.STRING
-        }
+        },
+        tanf_income: {
+            type:DataTypes.STRING
+        },
+        medicaid_income: {
+            type:DataTypes.STRING
+        },
+        snap_income: {
+            type:DataTypes.STRING
+        },
+        socail_security_income: {
+            type:DataTypes.STRING
+        },
+        other_income: {
+            type:DataTypes.STRING
+        },
+        yearly_income: {
+            type:DataTypes.STRING
+        },
     })
     return Applicant;
 }
