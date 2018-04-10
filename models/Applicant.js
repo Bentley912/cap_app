@@ -158,6 +158,30 @@ module.exports = function(sequelize, DataTypes){
         company2_reason: {
             type:DataTypes.STRING
         },
+        company3_name: {
+            type:DataTypes.STRING
+        },
+        company3_role: {
+            type:DataTypes.STRING
+        },
+        company3_start_date: {
+            type:DataTypes.DATE
+        },
+        company3_end_date: {
+            type:DataTypes.DATE
+        },
+        company3_hours: {
+            type:DataTypes.STRING
+        },
+        company3_pay_rate: {
+            type:DataTypes.STRING
+        },
+        company3_pay_frequency: {
+            type:DataTypes.STRING
+        },
+        company3_reason: {
+            type:DataTypes.STRING
+        },
     })
     return Applicant;
 }
