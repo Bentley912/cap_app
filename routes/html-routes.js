@@ -28,4 +28,8 @@ module.exports = function(app) {
   app.get("/income", function(req, res) {
     res.sendFile(path.join(__dirname + "/../public/income.html"));    
   }); 
+
+  app.get("/employment", function(req, res) {
+    res.sendFile(path.join(__dirname + "/../public/employment.html"));    
+  }); 
 }

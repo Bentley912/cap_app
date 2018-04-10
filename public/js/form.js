@@ -40,7 +40,9 @@ $(document).ready(function(){
     $('.income_button').on('click', function(){
         saveData('tanf_income', 'medicaid_income', 'snap_income', 'social_secuirty_income', 'other_income', 'yearly_income')
     })
-
+    $('.employment_button').on('click', function(){
+        saveData('employed', 'work_months', 'company1_name', 'company1_role', 'company1_start_date', 'company1_end_date', 'company1_hours', 'company1_pay_rate', 'company1_pay_frequency', 'company1_reason', 'company2_name', 'company2_role', 'company2_start_date', 'company2_end_date', 'company2_hours', 'company2_pay_rate', 'company2_pay_frequency', 'company2_reason')
+    })
 
     function postApplicant (applicant){
         $.post("/api/applicants", {applicant}).then(function(err,res){
