@@ -17,8 +17,10 @@ $(document).ready(function(){
     
 
     // finds input and saves it to local storage with same name for property
-    var saveData = function(){
-        for (var i=0;i < arguments.length; i++){
+    var saveData = function()
+    {
+        for (var i = 0;i < arguments.length; i++)
+        {
             var value = $("#" + arguments[i] + "").val(); 
             sessionStorage.setItem( arguments[i], value)          
         }
