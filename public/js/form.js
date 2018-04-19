@@ -45,11 +45,12 @@ $(document).ready(function(){
 
 
     function postApplicant (applicant){
-        $.post("/api/applicants", {applicant}).then(function(err,res){
+        $.post("/api/applicants", {applicant}).then(function(err,res)
+        {
             if(err)
-            console.log(err)
+                console.log(err)
             else
-            console.log(res)
+                console.log(res)
             $('.alert').show();
         })
     }   
