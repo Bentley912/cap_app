@@ -2,6 +2,7 @@ $(document).ready(function(){
     $('.alert').hide();
 
     // finds input and saves it to local storage with same name for property
+
     var saveData = function(){
         data = sessionStorage;
         if (data.getItem('applicant') === null){
