@@ -1,30 +1,32 @@
 $(document).ready(function(){ 
     $('.alert').hide();
-    $('.myForm').submit(function(){
-        var applicant ={};
-        applicant.first_name = $('#first_name_input').val();
-        applicant.last_name = $('#last_name_input').val();
-        applicant.middle = $('#middle_input').val();
-        applicant.birth_date = $('#birth_date_input').val();
-        applicant.street_address = $('#street_input').val();
-        applicant.apt = $('#apt_input').val();
-        applicant.city= $('#city_input').val();
-        applicant.state = $('#state_input').val();
-        applicant.last4 = $('#last4_input').val();
-        console.log(applicant);
-        // postApplicant(applicant);                
-    })
-    
 
     // finds input and saves it to local storage with same name for property
-    var saveData = function()
-    {
-        for (var i = 0;i < arguments.length; i++)
-        {
-            var value = $("#" + arguments[i] + "").val(); 
-            sessionStorage.setItem( arguments[i], value)          
+
+    var saveData = function(){
+        data = sessionStorage;
+        if (data.getItem('applicant') === null){
+            console.log('Applicant Empty')
+            applicant ={}
+            for (var i=0;i < arguments.length; i++){
+                var value = $("#" + arguments[i] + "").val(); 
+                applicant[arguments[i]]= value;
+            }
+            sessionStorage.setItem('applicant', JSON.stringify(applicant));
+            console.log(sessionStorage);
         }
-        console.log(sessionStorage);
+        else{
+            objectData = JSON.parse(data.getItem('applicant'));
+            applicant ={}
+            for (var i=0;i < arguments.length; i++){
+                var value = $("#" + arguments[i] + "").val(); 
+                applicant[arguments[i]]= value;
+            }
+            Object.assign(objectData, applicant);
+            sessionStorage.setItem('applicant', JSON.stringify(objectData));
+            console.log(sessionStorage);
+        // sessionStorage.setItem('applicant', JSON.stringify(applicant));
+        }
     }
 
     $('.demo_button').on('click', function(){
@@ -43,16 +45,26 @@ $(document).ready(function(){
         saveData('tanf_income', 'medicaid_income', 'snap_income', 'social_secuirty_income', 'other_income', 'yearly_income')
     })
 
+    $('.employment_button').on('click', function(){
+        saveData('employed', 'work_months', 'company1_name', 'company1_role', 'company1_start_date', 'company1_end_date', 'company1_hours', 'company1_pay_rate', 'company1_pay_frequency', 'company1_reason', 'company2_name', 'company2_role', 'company2_start_date', 'company2_end_date', 'company2_hours', 'company2_pay_rate', 'company2_pay_frequency', 'company2_reason', 'company3_name', 'company3_role', 'company3_start_date', 'company3_end_date', 'company3_hours', 'company3_pay_rate', 'company3_pay_frequency', 'company3_reason')
+    })
+
+    $('.db_button').on('click', function(){
+        var applicant = {sessionStorage};
+        console.log(applicant);
+    });
 
     function postApplicant (applicant){
-        $.post("/api/applicants", {applicant}).then(function(err,res){
-            if(err)
-            console.log(err)
-            else
-            console.log(res)
-            $('.alert').show();
-        })
-    }   
+        $.ajax({
+            type: "POST",
+            url: '/api/applicants',
+            data: applicant ,
+            success: function(response){
+                console.log(response)
+            },
+            dataType: JSON
+          });   
+    }  
 });
 
 

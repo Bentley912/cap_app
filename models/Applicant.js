@@ -104,6 +104,84 @@ module.exports = function(sequelize, DataTypes){
         yearly_income: {
             type:DataTypes.STRING
         },
+        employed: {
+            type:DataTypes.STRING
+        },
+        work_months: {
+            type:DataTypes.STRING
+        },
+        company1_name: {
+            type:DataTypes.STRING
+        },
+        company1_role: {
+            type:DataTypes.STRING
+        },
+        company1_start_date: {
+            type:DataTypes.DATE
+        },
+        company1_end_date: {
+            type:DataTypes.DATE
+        },
+        company1_hours: {
+            type:DataTypes.STRING
+        },
+        company1_pay_rate: {
+            type:DataTypes.STRING
+        },
+        company1_pay_frequency: {
+            type:DataTypes.STRING
+        },
+        company1_reason: {
+            type:DataTypes.STRING
+        },
+        company2_name: {
+            type:DataTypes.STRING
+        },
+        company2_role: {
+            type:DataTypes.STRING
+        },
+        company2_start_date: {
+            type:DataTypes.DATE
+        },
+        company2_end_date: {
+            type:DataTypes.DATE
+        },
+        company2_hours: {
+            type:DataTypes.STRING
+        },
+        company2_pay_rate: {
+            type:DataTypes.STRING
+        },
+        company2_pay_frequency: {
+            type:DataTypes.STRING
+        },
+        company2_reason: {
+            type:DataTypes.STRING
+        },
+        company3_name: {
+            type:DataTypes.STRING
+        },
+        company3_role: {
+            type:DataTypes.STRING
+        },
+        company3_start_date: {
+            type:DataTypes.DATE
+        },
+        company3_end_date: {
+            type:DataTypes.DATE
+        },
+        company3_hours: {
+            type:DataTypes.STRING
+        },
+        company3_pay_rate: {
+            type:DataTypes.STRING
+        },
+        company3_pay_frequency: {
+            type:DataTypes.STRING
+        },
+        company3_reason: {
+            type:DataTypes.STRING
+        },
     })
     return Applicant;
 }
