@@ -47,7 +47,7 @@ module.exports = function(app) {
     app.post("/api/applicants", function(req, res) {
 
       console.log(req.body);
-      db.Applicant.create(req.body.applicant)
+      db.Applicant.create(req.body)
       .then(function(appPost) {
         res.json(appPost);
       // }).then(function(){

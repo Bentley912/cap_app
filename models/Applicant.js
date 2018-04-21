@@ -67,7 +67,121 @@ module.exports = function(sequelize, DataTypes){
         },
         license: {
             type:DataTypes.STRING
-        }
+        },
+        contact_name: {
+            type:DataTypes.STRING
+        },
+        contact_phone: {
+            type:DataTypes.STRING
+        },
+        contact_address: {
+            type:DataTypes.STRING
+        },
+        household_adults: {
+            type:DataTypes.STRING
+        },
+        household_children: {
+            type:DataTypes.STRING
+        },
+        household_special_needs: {
+            type:DataTypes.STRING
+        },
+        tanf_income: {
+            type:DataTypes.STRING
+        },
+        medicaid_income: {
+            type:DataTypes.STRING
+        },
+        snap_income: {
+            type:DataTypes.STRING
+        },
+        socail_security_income: {
+            type:DataTypes.STRING
+        },
+        other_income: {
+            type:DataTypes.STRING
+        },
+        yearly_income: {
+            type:DataTypes.STRING
+        },
+        employed: {
+            type:DataTypes.STRING
+        },
+        work_months: {
+            type:DataTypes.STRING
+        },
+        company1_name: {
+            type:DataTypes.STRING
+        },
+        company1_role: {
+            type:DataTypes.STRING
+        },
+        company1_start_date: {
+            type:DataTypes.DATE
+        },
+        company1_end_date: {
+            type:DataTypes.DATE
+        },
+        company1_hours: {
+            type:DataTypes.STRING
+        },
+        company1_pay_rate: {
+            type:DataTypes.STRING
+        },
+        company1_pay_frequency: {
+            type:DataTypes.STRING
+        },
+        company1_reason: {
+            type:DataTypes.STRING
+        },
+        company2_name: {
+            type:DataTypes.STRING
+        },
+        company2_role: {
+            type:DataTypes.STRING
+        },
+        company2_start_date: {
+            type:DataTypes.DATE
+        },
+        company2_end_date: {
+            type:DataTypes.DATE
+        },
+        company2_hours: {
+            type:DataTypes.STRING
+        },
+        company2_pay_rate: {
+            type:DataTypes.STRING
+        },
+        company2_pay_frequency: {
+            type:DataTypes.STRING
+        },
+        company2_reason: {
+            type:DataTypes.STRING
+        },
+        company3_name: {
+            type:DataTypes.STRING
+        },
+        company3_role: {
+            type:DataTypes.STRING
+        },
+        company3_start_date: {
+            type:DataTypes.DATE
+        },
+        company3_end_date: {
+            type:DataTypes.DATE
+        },
+        company3_hours: {
+            type:DataTypes.STRING
+        },
+        company3_pay_rate: {
+            type:DataTypes.STRING
+        },
+        company3_pay_frequency: {
+            type:DataTypes.STRING
+        },
+        company3_reason: {
+            type:DataTypes.STRING
+        },
     })
     return Applicant;
 }
