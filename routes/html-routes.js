@@ -32,4 +32,8 @@ module.exports = function(app) {
   app.get("/employment", function(req, res) {
     res.sendFile(path.join(__dirname + "/../public/employment.html"));    
   }); 
+  app.get("/job_skills", function(req, res) {
+    res.sendFile(path.join(__dirname + "/../public/job_skills.html"));    
+  }); 
+
 }

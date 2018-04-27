@@ -1,12 +1,11 @@
 $(document).ready(function(){ 
     $('.alert').hide();
-
     // finds input and saves it to local storage with same name for property
-
     var saveData = function(){
         data = sessionStorage;
+        //Checks to see if Applicant exists in Local storage
         if (data.getItem('applicant') === null){
-            console.log('Applicant Empty')
+    //IF NOT CREATE NEW OBJECT AND ASSIGN IT TO SESSIONSTORAGE
             applicant ={}
             for (var i=0;i < arguments.length; i++){
                 var value = $("#" + arguments[i] + "").val(); 
@@ -15,6 +14,8 @@ $(document).ready(function(){
             sessionStorage.setItem('applicant', JSON.stringify(applicant));
             console.log(sessionStorage);
         }
+
+    //IF APPLICANT EXISTS, PARSE FROM STORAGE AND ADD NEW PROPS
         else{
             objectData = JSON.parse(data.getItem('applicant'));
             applicant ={}
@@ -22,10 +23,10 @@ $(document).ready(function(){
                 var value = $("#" + arguments[i] + "").val(); 
                 applicant[arguments[i]]= value;
             }
+            //MERGES OBJECTS 
             Object.assign(objectData, applicant);
             sessionStorage.setItem('applicant', JSON.stringify(objectData));
-            console.log(sessionStorage);
-        // sessionStorage.setItem('applicant', JSON.stringify(applicant));
+            console.log(sessionStorage); 
         }
     }
 
