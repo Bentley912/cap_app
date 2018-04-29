@@ -15,7 +15,7 @@ $(document).ready(function(){
             console.log(sessionStorage);
         }
 
-    //IF APPLICANT EXISTS, PARSE FROM STORAGE AND ADD NEW PROPS
+    //IF APPLICANT EXISTS, PARSE FROM STORAGE AND ADD NEW PROPS THEN RETURN TO LOCAL STORAGE
         else{
             objectData = JSON.parse(data.getItem('applicant'));
             applicant ={}
@@ -53,6 +53,16 @@ $(document).ready(function(){
     $('.db_button').on('click', function(){
         var applicant = {sessionStorage};
         console.log(applicant);
+    });
+
+    $('.skills_button').on('click', function(){
+        var skills = $('.form-check-input:checked'); 
+        var saveSkills={}
+        for (var i=0; i<skills.length; i++){
+            var skillValue = skills[i].value;
+            saveSkills[i] = skillValue;
+        }
+        console.log(saveSkills);
     });
 
     function postApplicant (applicant){
