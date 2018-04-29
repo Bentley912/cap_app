@@ -11,7 +11,7 @@ $(document).ready(function(){
                 var value = $("#" + arguments[i] + "").val(); 
                 applicant[arguments[i]]= value;
             }
-            sessionStorage.setItem('applicant', JSON.stringify(applicant));
+            data.setItem('applicant', JSON.stringify(applicant));
             console.log(sessionStorage);
         }
 
@@ -28,6 +28,15 @@ $(document).ready(function(){
             sessionStorage.setItem('applicant', JSON.stringify(objectData));
             console.log(sessionStorage); 
         }
+    }
+
+    var saveCheckData = function(alias, dataObj){
+        data = sessionStorage;
+        objectData = JSON.parse(data.getItem('applicant'));
+        alias =  dataObj;
+        Object.assign(objectData, alias);
+        sessionStorage.setItem('applicant', JSON.stringify(objectData));
+        console.log(sessionStorage);
     }
 
     $('.demo_button').on('click', function(){
@@ -60,9 +69,10 @@ $(document).ready(function(){
         var saveSkills={}
         for (var i=0; i<skills.length; i++){
             var skillValue = skills[i].value;
-            saveSkills[i] = skillValue;
+            saveSkills['job_skill-' + i] = skillValue;
         }
         console.log(saveSkills);
+        saveCheckData('job_skills', saveSkills);
     });
 
     function postApplicant (applicant){
