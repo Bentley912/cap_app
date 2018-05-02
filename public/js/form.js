@@ -2,7 +2,7 @@ $(document).ready(function(){
     $('.alert').hide();
     // finds input and saves it to local storage with same name for property
     var saveData = function(){
-        data = sessionStorage;
+        var data = sessionStorage;
         //Checks to see if Applicant exists in Local storage
         if (data.getItem('applicant') === null){
     //IF NOT CREATE NEW OBJECT AND ASSIGN IT TO SESSIONSTORAGE
@@ -31,7 +31,7 @@ $(document).ready(function(){
     }
 
     var saveCheckData = function(alias, dataObj){
-        data = sessionStorage;
+        var data = sessionStorage;
         objectData = JSON.parse(data.getItem('applicant'));
         alias =  dataObj;
         Object.assign(objectData, alias);
@@ -66,15 +66,18 @@ $(document).ready(function(){
 
     $('.skills_button').on('click', function(){
         var skillSet = [];
-        var jobSkills;
         var skills = $('.form-check-input:checked'); 
-        for (var i=0; i<skills.length; i++){
-            
+        for (var i=0; i<skills.length; i++){  
             skillSet.push(skills[i].value);
         }
-       var newSkillSet =  skillSet.join();
-
-        console.log(newSkillSet);
+        var newSkillSet =  skillSet.join();
+        var data = sessionStorage;
+        var applicant = {};
+        objectData = JSON.parse(data.getItem('applicant'));
+        applicant.job_skills = newSkillSet;
+        Object.assign(objectData, applicant);
+        sessionStorage.setItem('applicant', JSON.stringify(objectData));
+        console.log(sessionStorage);
     });
 
     function postApplicant (applicant){
