@@ -65,14 +65,16 @@ $(document).ready(function(){
     });
 
     $('.skills_button').on('click', function(){
+        var skillSet = [];
+        var jobSkills;
         var skills = $('.form-check-input:checked'); 
-        var saveSkills={}
         for (var i=0; i<skills.length; i++){
-            var skillValue = skills[i].value;
-            saveSkills['job_skill-' + i] = skillValue;
+            
+            skillSet.push(skills[i].value);
         }
-        console.log(saveSkills);
-        saveCheckData('job_skills', saveSkills);
+       var newSkillSet =  skillSet.join();
+
+        console.log(newSkillSet);
     });
 
     function postApplicant (applicant){
