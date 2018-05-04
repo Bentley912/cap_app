@@ -40,7 +40,7 @@ $(document).ready(function(){
     }
 
     $('.demo_button').on('click', function(){
-        saveData('first_name', 'last_name', 'middle', 'birth_date', 'street', 'apt', 'city', 'state', 'last4', 'phone', 'email','alt_phone', 'gender', 'ethnicity','race', 'citizen', 'work_auth', 'sel_service', 'veteran', 'source', 'marital_status', 'primary_language', 'driving', 'license');
+        saveData('first_name', 'last_name', 'middle', 'birth_date', 'street_address', 'apt', 'city', 'state', 'last4', 'phone', 'email','alt_phone', 'gender', 'ethnicity','race', 'citizen', 'work_auth', 'sel_service', 'veteran', 'source', 'marital_status', 'primary_language', 'driving', 'license');
     })
 
     $('.contact_button').on('click', function(){
@@ -60,8 +60,17 @@ $(document).ready(function(){
     })
 
     $('.db_button').on('click', function(){
-        var applicant = {sessionStorage};
-        console.log(applicant);
+        var data = sessionStorage;
+        var applicant = JSON.parse(data.getItem('applicant'));
+        $.ajax({
+            type: "POST",
+            url: '/api/applicants',
+            data: applicant ,
+            success: function(response){
+                console.log(response)
+            },
+            dataType: JSON
+          });   
     });
 
     $('.skills_button').on('click', function(){

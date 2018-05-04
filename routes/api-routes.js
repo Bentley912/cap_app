@@ -48,8 +48,8 @@ module.exports = function(app) {
 
       console.log(req.body);
       db.Applicant.create(req.body)
-      .then(function(appPost) {
-        res.json(appPost);
+      .then(function(res) {
+        res.json(res);
       // }).then(function(){
       //     //mail details for nodemailer
       //     let mailOptions = {
