@@ -112,6 +112,7 @@ $(document).ready(function(){
 
     $('.barriers_button').on('click', function(){
         saveCheckData('barriers');
+        saveData('crime_convictions', 'crime_details', 'felony_convictions', 'felony_details', 'pending_convictions', 'pending_details', 'sex_offender', 'probation_parole')
     })
 
     function postApplicant (applicant){
