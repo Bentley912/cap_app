@@ -89,6 +89,10 @@ $(document).ready(function(){
         console.log(sessionStorage);
     });
 
+    $('.goals_button').on('click', function(){
+        saveData('job_interest', 'goals' );
+    })
+
     function postApplicant (applicant){
         $.ajax({
             type: "POST",
