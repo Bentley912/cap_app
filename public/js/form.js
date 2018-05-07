@@ -30,14 +30,30 @@ $(document).ready(function(){
         }
     }
 
-    var saveCheckData = function(alias, dataObj){
+    var saveCheckData = function(argName){
+        var dataSet = [];
+        var skills = $('.form-check-input:checked'); 
+        for (var i=0; i<skills.length; i++){  
+            dataSet.push(skills[i].value);
+        }
+        var newSkillSet =  dataSet.join();
         var data = sessionStorage;
+        var applicant = {};
         objectData = JSON.parse(data.getItem('applicant'));
-        alias =  dataObj;
-        Object.assign(objectData, alias);
+        applicant[argName] = newSkillSet;
+        Object.assign(objectData, applicant);
         sessionStorage.setItem('applicant', JSON.stringify(objectData));
         console.log(sessionStorage);
     }
+
+    // var saveCheckData = function(alias, dataObj){
+    //     var data = sessionStorage;
+    //     objectData = JSON.parse(data.getItem('applicant'));
+    //     alias =  dataObj;
+    //     Object.assign(objectData, alias);
+    //     sessionStorage.setItem('applicant', JSON.stringify(objectData));
+    //     console.log(sessionStorage);
+    // }
 
     $('.demo_button').on('click', function(){
         saveData('first_name', 'last_name', 'middle', 'birth_date', 'street_address', 'apt', 'city', 'state', 'last4', 'phone', 'email','alt_phone', 'gender', 'ethnicity','race', 'citizen', 'work_auth', 'sel_service', 'veteran', 'source', 'marital_status', 'primary_language', 'driving', 'license');
@@ -74,23 +90,28 @@ $(document).ready(function(){
     });
 
     $('.skills_button').on('click', function(){
-        var skillSet = [];
-        var skills = $('.form-check-input:checked'); 
-        for (var i=0; i<skills.length; i++){  
-            skillSet.push(skills[i].value);
-        }
-        var newSkillSet =  skillSet.join();
-        var data = sessionStorage;
-        var applicant = {};
-        objectData = JSON.parse(data.getItem('applicant'));
-        applicant.job_skills = newSkillSet;
-        Object.assign(objectData, applicant);
-        sessionStorage.setItem('applicant', JSON.stringify(objectData));
-        console.log(sessionStorage);
+        saveCheckData('job_skills');
+        // var skillSet = [];
+        // var skills = $('.form-check-input:checked'); 
+        // for (var i=0; i<skills.length; i++){  
+        //     skillSet.push(skills[i].value);
+        // }
+        // var newSkillSet =  skillSet.join();
+        // var data = sessionStorage;
+        // var applicant = {};
+        // objectData = JSON.parse(data.getItem('applicant'));
+        // applicant.job_skills = newSkillSet;
+        // Object.assign(objectData, applicant);
+        // sessionStorage.setItem('applicant', JSON.stringify(objectData));
+        // console.log(sessionStorage);
     });
 
     $('.goals_button').on('click', function(){
         saveData('job_interest', 'goals' );
+    })
+
+    $('.barriers_button').on('click', function(){
+        saveCheckData('barriers');
     })
 
     function postApplicant (applicant){

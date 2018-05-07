@@ -184,6 +184,12 @@ module.exports = function(sequelize, DataTypes){
         },
         job_skills: {
             type:DataTypes.STRING
+        },
+        job_interest: {
+            type:DataTypes.STRING
+        },
+        goals: {
+            type:DataTypes.STRING
         }
     })
     return Applicant;
