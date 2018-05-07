@@ -1,20 +1,21 @@
 $(document).ready(function(){ 
     $('.alert').hide();
-
     // finds input and saves it to local storage with same name for property
-
     var saveData = function(){
-        data = sessionStorage;
+        var data = sessionStorage;
+        //Checks to see if Applicant exists in Local storage
         if (data.getItem('applicant') === null){
-            console.log('Applicant Empty')
+    //IF NOT CREATE NEW OBJECT AND ASSIGN IT TO SESSIONSTORAGE
             applicant ={}
             for (var i=0;i < arguments.length; i++){
                 var value = $("#" + arguments[i] + "").val(); 
                 applicant[arguments[i]]= value;
             }
-            sessionStorage.setItem('applicant', JSON.stringify(applicant));
+            data.setItem('applicant', JSON.stringify(applicant));
             console.log(sessionStorage);
         }
+
+    //IF APPLICANT EXISTS, PARSE FROM STORAGE AND ADD NEW PROPS THEN RETURN TO LOCAL STORAGE
         else{
             objectData = JSON.parse(data.getItem('applicant'));
             applicant ={}
@@ -22,15 +23,24 @@ $(document).ready(function(){
                 var value = $("#" + arguments[i] + "").val(); 
                 applicant[arguments[i]]= value;
             }
+            //MERGES OBJECTS 
             Object.assign(objectData, applicant);
             sessionStorage.setItem('applicant', JSON.stringify(objectData));
-            console.log(sessionStorage);
-        // sessionStorage.setItem('applicant', JSON.stringify(applicant));
+            console.log(sessionStorage); 
         }
     }
 
+    var saveCheckData = function(alias, dataObj){
+        var data = sessionStorage;
+        objectData = JSON.parse(data.getItem('applicant'));
+        alias =  dataObj;
+        Object.assign(objectData, alias);
+        sessionStorage.setItem('applicant', JSON.stringify(objectData));
+        console.log(sessionStorage);
+    }
+
     $('.demo_button').on('click', function(){
-        saveData('first_name', 'last_name', 'middle', 'birth_date', 'street', 'apt', 'city', 'state', 'last4', 'phone', 'email','alt_phone', 'gender', 'ethnicity','race', 'citizen', 'work_auth', 'sel_service', 'veteran', 'source', 'marital_status', 'primary_language', 'driving', 'license');
+        saveData('first_name', 'last_name', 'middle', 'birth_date', 'street_address', 'apt', 'city', 'state', 'last4', 'phone', 'email','alt_phone', 'gender', 'ethnicity','race', 'citizen', 'work_auth', 'sel_service', 'veteran', 'source', 'marital_status', 'primary_language', 'driving', 'license');
     })
 
     $('.contact_button').on('click', function(){
@@ -50,8 +60,33 @@ $(document).ready(function(){
     })
 
     $('.db_button').on('click', function(){
-        var applicant = {sessionStorage};
-        console.log(applicant);
+        var data = sessionStorage;
+        var applicant = JSON.parse(data.getItem('applicant'));
+        $.ajax({
+            type: "POST",
+            url: '/api/applicants',
+            data: applicant ,
+            success: function(response){
+                console.log(response)
+            },
+            dataType: JSON
+          });   
+    });
+
+    $('.skills_button').on('click', function(){
+        var skillSet = [];
+        var skills = $('.form-check-input:checked'); 
+        for (var i=0; i<skills.length; i++){  
+            skillSet.push(skills[i].value);
+        }
+        var newSkillSet =  skillSet.join();
+        var data = sessionStorage;
+        var applicant = {};
+        objectData = JSON.parse(data.getItem('applicant'));
+        applicant.job_skills = newSkillSet;
+        Object.assign(objectData, applicant);
+        sessionStorage.setItem('applicant', JSON.stringify(objectData));
+        console.log(sessionStorage);
     });
 
     function postApplicant (applicant){
