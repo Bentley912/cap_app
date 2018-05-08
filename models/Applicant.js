@@ -190,7 +190,34 @@ module.exports = function(sequelize, DataTypes){
         },
         goals: {
             type:DataTypes.STRING
-        }
+        },
+        barriers: {
+           type: DataTypes.STRING
+        },
+        crime_convictions: {
+            type: DataTypes.STRING
+         },
+        crime_details: {
+            type: DataTypes.STRING
+         },
+         felony_convictions: {
+            type: DataTypes.STRING
+         },
+        felony_details: {
+            type: DataTypes.STRING
+         },
+         pending_convictions: {
+            type: DataTypes.STRING
+         },
+        pending_details: {
+            type: DataTypes.STRING
+         },
+         sex_offender: {
+            type: DataTypes.STRING
+         },
+         probation_parole: {
+            type: DataTypes.STRING
+         },
     })
     return Applicant;
 }

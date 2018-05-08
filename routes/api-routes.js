@@ -45,11 +45,10 @@ module.exports = function(app) {
 //   });
   // POST route for saving a new post
     app.post("/api/applicants", function(req, res) {
-
-      console.log(req.body);
-      db.Applicant.create(req.body)
-      .then(function(res) {
-        res.json(res);
+      db.Applicant.create(req.body);
+      res.send('Successfully posted new Applicant');
+      // .then(function(req,res) {
+       
       // }).then(function(){
       //     //mail details for nodemailer
       //     let mailOptions = {
@@ -72,7 +71,7 @@ module.exports = function(app) {
       //         // Preview URL: https://ethereal.email/message/WaQKMgKddxQDoou...
       //     });
       // });
-        });
+        // });
     // DELETE route for deleting posts
   //   app.delete("/api/posts/:id", function (req, res) {
   //     console.log(req);
