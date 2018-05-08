@@ -41,4 +41,7 @@ module.exports = function(app) {
   app.get("/barriers", function(req, res) {
     res.sendFile(path.join(__dirname + "/../public/barriers.html"));    
   }); 
+  app.get("/signature", function(req, res) {
+    res.sendFile(path.join(__dirname + "/../public/signature.html"));    
+  }); 
 }
