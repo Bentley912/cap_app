@@ -218,6 +218,39 @@ module.exports = function(sequelize, DataTypes){
          probation_parole: {
             type: DataTypes.STRING
          },
+         agreed: {
+             type: DataTypes.STRING
+         },
+         have_resume: {
+             type: DataTypes.STRING
+         }, 
+         I_can_create_resume: {
+            type: DataTypes.STRING
+         },
+         I_possess_interview_skills: {
+            type: DataTypes.STRING
+         },
+         support_system: {
+            type: DataTypes.STRING
+         },
+         networking_skills: {
+            type: DataTypes.STRING
+         },
+         job_search_skills: {
+            type: DataTypes.STRING
+         },
+         workplace_conflict_resolution_skill: {
+            type: DataTypes.STRING
+         },
+         teamwork_skills: {
+            type: DataTypes.STRING
+         },
+         job_maintenance_skills: {
+            type: DataTypes.STRING
+         },
+         have_career_goals: {
+            type: DataTypes.STRING
+         },
     })
     return Applicant;
 }

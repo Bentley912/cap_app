@@ -102,7 +102,7 @@ $(document).ready(function(){
         saveData('crime_convictions', 'crime_details', 'felony_convictions', 'felony_details', 'pending_convictions', 'pending_details', 'sex_offender', 'probation_parole')
     })
 
-    $('agree_button').on('click', function(){
+    $('.agree_button').on('click', function(){
         var applicant= {};
         var data = sessionStorage;
         applicant.agreed = 'yes';
@@ -112,12 +112,16 @@ $(document).ready(function(){
         console.log(sessionStorage);
     })
 
+    $('.skills_survey_button').on('click', function(){
+        saveData('have_resume', 'I_can_create_resume', 'I_possess_interview_skills', 'support_system','networking_skills', 'job_search_skills', 'workplace_conflict_resolution_skill','teamwork_skills', 'job_maintenance_skills','have_career_goals')
+    })
+
     function postApplicant (applicant){
         $.ajax({
             type: "POST",
             url: '/api/applicants',
             data: applicant ,
-            success: function(response){
+            success: function(response) {
                 console.log(response)
             },
             dataType: JSON

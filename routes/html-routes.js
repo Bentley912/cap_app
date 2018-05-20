@@ -44,4 +44,7 @@ module.exports = function(app) {
   app.get("/signature", function(req, res) {
     res.sendFile(path.join(__dirname + "/../public/signature.html"));    
   }); 
+  app.get("/skills_survey", function(req, res) {
+    res.sendFile(path.join(__dirname + "/../public/skills_survey.html"));    
+  }); 
 }
