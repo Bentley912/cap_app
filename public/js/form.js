@@ -6,7 +6,7 @@ $(document).ready(function(){
         //Checks to see if Applicant exists in Local storage
         if (data.getItem('applicant') === null){
     //IF NOT CREATE NEW OBJECT AND ASSIGN IT TO SESSIONSTORAGE
-            applicant ={}
+            var applicant ={}
             for (var i=0;i < arguments.length; i++){
                 var value = $("#" + arguments[i] + "").val(); 
                 applicant[arguments[i]]= value;
@@ -18,7 +18,7 @@ $(document).ready(function(){
     //IF APPLICANT EXISTS, PARSE FROM STORAGE AND ADD NEW PROPS THEN RETURN TO LOCAL STORAGE
         else{
             objectData = JSON.parse(data.getItem('applicant'));
-            applicant ={}
+            var applicant ={}
             for (var i=0;i < arguments.length; i++){
                 var value = $("#" + arguments[i] + "").val(); 
                 applicant[arguments[i]]= value;
@@ -91,19 +91,6 @@ $(document).ready(function(){
 
     $('.skills_button').on('click', function(){
         saveCheckData('job_skills');
-        // var skillSet = [];
-        // var skills = $('.form-check-input:checked'); 
-        // for (var i=0; i<skills.length; i++){  
-        //     skillSet.push(skills[i].value);
-        // }
-        // var newSkillSet =  skillSet.join();
-        // var data = sessionStorage;
-        // var applicant = {};
-        // objectData = JSON.parse(data.getItem('applicant'));
-        // applicant.job_skills = newSkillSet;
-        // Object.assign(objectData, applicant);
-        // sessionStorage.setItem('applicant', JSON.stringify(objectData));
-        // console.log(sessionStorage);
     });
 
     $('.goals_button').on('click', function(){
@@ -113,6 +100,16 @@ $(document).ready(function(){
     $('.barriers_button').on('click', function(){
         saveCheckData('barriers');
         saveData('crime_convictions', 'crime_details', 'felony_convictions', 'felony_details', 'pending_convictions', 'pending_details', 'sex_offender', 'probation_parole')
+    })
+
+    $('agree_button').on('click', function(){
+        var applicant= {};
+        var data = sessionStorage;
+        applicant.agreed = 'yes';
+        objectData = JSON.parse(data.getItem('applicant'));
+        Object.assign(objectData, applicant);
+        sessionStorage.setItem('applicant', JSON.stringify(objectData));
+        console.log(sessionStorage);
     })
 
     function postApplicant (applicant){
