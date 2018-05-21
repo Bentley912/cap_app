@@ -30,9 +30,13 @@ $(document).ready(function(){
         }
     }
 
-    var formCheck = function(argNames){
+    var formCheck = function(){
         var missing = [];
+        var argNames ={};
         var fields = $('input,textarea,select').filter('[required]:visible');
+        for (var i=0; i < arguments.length; i++){
+            argNames[arguments[i]] = arguments[i];
+        }
         for (var i = 0; i<fields.length;i++){
             if (fields[i].value === ""){
                 missing.push(fields[i].name);
@@ -42,8 +46,11 @@ $(document).ready(function(){
         if (missing.length > 0){
             alert('The following fields are required:' + missing);
         }
-        else saveData(argNames)
-
+        else 
+        var titles= (Object.keys(argNames));
+        for (var i=0; i<titles.length; i++){
+            saveData(titles[i]);
+        }
     }
 
     var saveCheckData = function(argName){
@@ -62,18 +69,9 @@ $(document).ready(function(){
         console.log(sessionStorage);
     }
 
-    // var saveCheckData = function(alias, dataObj){
-    //     var data = sessionStorage;
-    //     objectData = JSON.parse(data.getItem('applicant'));
-    //     alias =  dataObj;
-    //     Object.assign(objectData, alias);
-    //     sessionStorage.setItem('applicant', JSON.stringify(objectData));
-    //     console.log(sessionStorage);
-    // }
 
     $('.demo_button').on('click', function(){
         formCheck('first_name', 'last_name', 'middle', 'birth_date', 'street_address', 'apt', 'city', 'state', 'last4', 'phone', 'email','alt_phone', 'gender', 'ethnicity','race', 'citizen', 'work_auth', 'sel_service', 'veteran', 'source', 'marital_status', 'primary_language', 'driving', 'license');
-        // saveData('first_name', 'last_name', 'middle', 'birth_date', 'street_address', 'apt', 'city', 'state', 'last4', 'phone', 'email','alt_phone', 'gender', 'ethnicity','race', 'citizen', 'work_auth', 'sel_service', 'veteran', 'source', 'marital_status', 'primary_language', 'driving', 'license');
     })
 
     $('.contact_button').on('click', function(){
@@ -131,6 +129,25 @@ $(document).ready(function(){
 
     $('.skills_survey_button').on('click', function(){
         saveData('have_resume', 'I_can_create_resume', 'I_possess_interview_skills', 'support_system','networking_skills', 'job_search_skills', 'workplace_conflict_resolution_skill','teamwork_skills', 'job_maintenance_skills','have_career_goals')
+        }
+       
+        
+    )
+
+    $('.computer_survey_button').on('click', function(){
+        saveData('power_computer','operate_computer', 'typing_skills','use_word', 'open_internet_browser', 'have_email', 'google_something', 'improve_computer_skills');
+        var data = sessionStorage;
+        var applicant = JSON.parse(data.getItem('applicant'));
+        $.ajax({
+            type: "POST",
+            url: '/api/applicants',
+            data: applicant ,
+            success: function(response){
+                console.log(response)
+            },
+            dataType: JSON
+          });   
+        
     })
 
     function postApplicant (applicant){

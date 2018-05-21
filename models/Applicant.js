@@ -251,6 +251,30 @@ module.exports = function(sequelize, DataTypes){
          have_career_goals: {
             type: DataTypes.STRING
          },
+         power_computer: {
+            type: DataTypes.STRING
+         },
+         operate_computer: {
+            type: DataTypes.STRING
+         },
+         typing_skills: {
+            type: DataTypes.STRING
+         },
+         use_word: {
+            type: DataTypes.STRING
+         },
+         open_internet_browser: {
+            type: DataTypes.STRING
+         },
+         have_email: {
+            type: DataTypes.STRING
+         },
+         google_something: {
+            type: DataTypes.STRING
+         },
+         improve_computer_skills: {
+            type: DataTypes.STRING
+         },
     })
     return Applicant;
 }
