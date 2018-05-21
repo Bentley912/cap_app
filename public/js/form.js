@@ -30,6 +30,22 @@ $(document).ready(function(){
         }
     }
 
+    var formCheck = function(argNames){
+        var missing = [];
+        var fields = $('input,textarea,select').filter('[required]:visible');
+        for (var i = 0; i<fields.length;i++){
+            if (fields[i].value === ""){
+                missing.push(fields[i].name);
+            }
+        }
+        
+        if (missing.length > 0){
+            alert('The following fields are required:' + missing);
+        }
+        else saveData(argNames)
+
+    }
+
     var saveCheckData = function(argName){
         var dataSet = [];
         var skills = $('.form-check-input:checked'); 
@@ -56,7 +72,8 @@ $(document).ready(function(){
     // }
 
     $('.demo_button').on('click', function(){
-        saveData('first_name', 'last_name', 'middle', 'birth_date', 'street_address', 'apt', 'city', 'state', 'last4', 'phone', 'email','alt_phone', 'gender', 'ethnicity','race', 'citizen', 'work_auth', 'sel_service', 'veteran', 'source', 'marital_status', 'primary_language', 'driving', 'license');
+        formCheck('first_name', 'last_name', 'middle', 'birth_date', 'street_address', 'apt', 'city', 'state', 'last4', 'phone', 'email','alt_phone', 'gender', 'ethnicity','race', 'citizen', 'work_auth', 'sel_service', 'veteran', 'source', 'marital_status', 'primary_language', 'driving', 'license');
+        // saveData('first_name', 'last_name', 'middle', 'birth_date', 'street_address', 'apt', 'city', 'state', 'last4', 'phone', 'email','alt_phone', 'gender', 'ethnicity','race', 'citizen', 'work_auth', 'sel_service', 'veteran', 'source', 'marital_status', 'primary_language', 'driving', 'license');
     })
 
     $('.contact_button').on('click', function(){

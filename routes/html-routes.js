@@ -47,4 +47,7 @@ module.exports = function(app) {
   app.get("/skills_survey", function(req, res) {
     res.sendFile(path.join(__dirname + "/../public/skills_survey.html"));    
   }); 
+  app.get("/computer_survey", function(req, res) {
+    res.sendFile(path.join(__dirname + "/../public/computer_survey.html"));    
+  }); 
 }
