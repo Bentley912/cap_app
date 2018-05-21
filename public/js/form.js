@@ -72,6 +72,7 @@ $(document).ready(function(){
 
     $('.demo_button').on('click', function(){
         formCheck('first_name', 'last_name', 'middle', 'birth_date', 'street_address', 'apt', 'city', 'state', 'last4', 'phone', 'email','alt_phone', 'gender', 'ethnicity','race', 'citizen', 'work_auth', 'sel_service', 'veteran', 'source', 'marital_status', 'primary_language', 'driving', 'license');
+        $('.alert').show();
     })
 
     $('.contact_button').on('click', function(){
