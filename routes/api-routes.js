@@ -7,8 +7,8 @@ const transporter = nodemailer.createTransport({
     host: 'smtp.ethereal.email',
     port: 587,
     auth: {
-        user: 'zu4motzrieoumqo5@ethereal.email',
-        pass: 'tJyWevpAKeSfJzX5EK'
+        user: process.env.EMAIL_USER,
+        pass: process.env.EMAIL_PASS
     }
 });
 // Routes
@@ -46,32 +46,31 @@ module.exports = function(app) {
   // POST route for saving a new post
     app.post("/api/applicants", function(req, res) {
       db.Applicant.create(req.body);
-      res.send('Successfully posted new Applicant');
-      // .then(function(req,res) {
-       
-      // }).then(function(){
-      //     //mail details for nodemailer
-      //     let mailOptions = {
-      //         from: '"notifications@cap.org" <app@cap.org>', // sender address
-      //         to: 'zu4motzrieoumqo5@ethereal.email', // list of receivers
-      //         subject: 'Application Submitted', // Subject line
-      //         text: req.body.firstname + ' ' + req.body.last_name + ' just sent you a message!', // plain text body
-      //         html: '<b>'+req.body.first_name+'</b>' + '</br>' +
-      //         ''
-      //          // html body
-      //     };
-      //     transporter.sendMail(mailOptions, (error, info) => {
-      //         if (error) {
-      //             return console.log(error);
-      //         }
-      //         console.log('Message sent: %s', info.messageId);
-      //         // Preview only available when sending through an Ethereal account
-      //         console.log('Preview URL: %s', nodemailer.getTestMessageUrl(info));
-      //         // Message sent: <b658f8ca-6296-ccf4-8306-87d57a0b4321@blurdybloop.com>
-      //         // Preview URL: https://ethereal.email/message/WaQKMgKddxQDoou...
-      //     });
-      // });
-        // });
+      res.send('Successfully posted new Applicant');       
+      }).then(function(){
+          //mail details for nodemailer
+          let mailOptions = {
+              from: '"noreply@cap.org" <app@cap.org>', // sender address
+              to: 'ijvv7dth54f7zp3w@ethereal.email', // list of receivers
+              subject: 'Application Submitted', // Subject line
+              text: req.body.firstname + ' ' + req.body.last_name + ' just sent you a message!', // plain text body
+              html: '<b>'+req.body.first_name+'</b>' + '</br>' +
+              ''  + req.body.last_name   + '</br>' + 
+              'DOB: ' 
+               // html body
+          };
+          transporter.sendMail(mailOptions, (error, info) => {
+              if (error) {
+                  return console.log(error);
+              }
+              console.log('Message sent: %s', info.messageId);
+              // Preview only available when sending through an Ethereal account
+              console.log('Preview URL: %s', nodemailer.getTestMessageUrl(info));
+              // Message sent: <b658f8ca-6296-ccf4-8306-87d57a0b4321@blurdybloop.com>
+              // Preview URL: https://ethereal.email/message/WaQKMgKddxQDoou...
+          });
+      });
+      
     // DELETE route for deleting posts
   //   app.delete("/api/posts/:id", function (req, res) {
   //     console.log(req);
@@ -96,6 +95,5 @@ module.exports = function(app) {
   //       res.json(dbPost);
   //     });
   //   });
-    })
+}
 
-};
