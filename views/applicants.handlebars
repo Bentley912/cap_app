@@ -1,11 +1,101 @@
 <div class="container">
-        <div class="jumbotron">
-            <h1>Chatham Apprentice Program Applicants</h1>
-            <p>Hello CAP Staff - Here are all of your CAP Applicants</p>
-            
-        </div>
+
 
         {{#each applicants}}
-        <P>{{this.id}}</P>
+ 
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title">{{this.first_name}} {{this.last_name}}      Application Submitted:{{this.createdAt}}</h3>
+                </div>
+                <div class="panel-body">
+                    <p>DOB: {{this.birth_date}}</p>
+                    <p>Address: {{this.street_address}}</p>
+                    <p>Apt: {{this.apt}}</p>
+                    <p>Phone: {{this.phone}}</p>
+                    <p>Email: {{this.email}}</p>
+                    <p>Alternate Phone: {{this.alt_phone}}</p>
+                    <p>Gender: {{this.gender}}</p>
+                    <p>Hispanic?: {{this.ethnicity}}</p>
+                    <p>Race: {{this.race}}</p>
+                    <p>American Citizen?: {{this.citizen}}</p>
+                    <p>Authorized to Work in US?: {{this.work_auth}}</p>
+                    <p>Selective Service: {{this.sel_service}}</p>
+                    <p>Veteran: {{this.veteran}}</p>
+                    <p>Referral Source: {{this.source}}</p>
+                    <p>Marital Status: {{this.marital_status}}</p>
+                    <p>Primary Language: {{this.primary_language}}</p>
+                    <p>Able to Drive?: {{this.driving}}</p>
+                    <p>Driver's License: {{this.license}}</p>
+                    <p>Emergency Contact: {{this.contact_name}}</p>
+                    <p>Energency Phone: {{this.contact_phone}}</p>
+                    <p>Emergency Address: {{this.contact_address}}</p>
+                    <p>Adults in Household: {{this.household_adults}}</p>
+                    <p>Children in Household: {{this.household_children}}</p>
+                    <p>Special Needs in Household: {{this.household_special_needs}}</p>
+                    <p>TANF: {{this.tanf_income}}</p>
+                    <p>Medicaid: {{this.medicaid_income}}</p>
+                    <p>SNAP: {{this.snap_income}}</p>
+                    <p>Social Security: {{this.socail_security_income}}</p>
+                    <p>Other Income: {{this.other_income}}</p>
+                    <p>Yearly Income: {{this.yearly_income}}</p>
+                    <p>Currently Employed: {{this.employed}}</p>
+                    <p>Months Worked This YEar: {{this.work_months}}</p>
+                    <p>Employment History 1: {{this.company1_name}}</p>
+                    <p>Position: {{this.company1_role}}</p>
+                    <p>Start Date: {{this.company1_start_date}}</p>
+                    <p>End Date: {{this.company1_end_date}}</p>
+                    <p>Hours: {{this.company1_hours}}</p>
+                    <p>Rate of Pay: {{this.company1_pay_rate}}</p>
+                    <p>Pay Frequency: {{this.company1_pauy_frequency}}</p>
+                    <p>Reason for Leaving: {{this.company1_reason}}</p>
+                    <p>Employment History 2: {{this.company2_name}}</p>
+                    <p>Position: {{this.company2_role}}</p>
+                    <p>Start Date: {{this.company2_start_date}}</p>
+                    <p>End Date: {{this.company2_end_date}}</p>
+                    <p>Hours: {{this.company2_hours}}</p>
+                    <p>Rate of Pay: {{this.company2_pay_rate}}</p>
+                    <p>Pay Frequency: {{this.company2_pay_frequency}}</p>
+                    <p>Reason for Leaving: {{this.company2_reason}}</p>
+                    <p>Employment History 3: {{this.company3_name}}</p>
+                    <p>Position: {{this.company3_role}}</p>
+                    <p>Start Date: {{this.company3_start_date}}</p>
+                    <p>End Date: {{this.company3_end_date}}</p>
+                    <p>Hours: {{this.company3_hours}}</p>
+                    <p>Rate of Pay: {{this.company3_pay_rate}}</p>
+                    <p>Pay Frequency: {{this.company3_pay_frequency}}</p>
+                    <p>Reason for Leaving: {{this.company3_reason}}</p>
+                    <p>Job Skills: {{this.job_skills}}</p>
+                    <p>Job Interests: {{this.job_interest}}</p>   
+                    <p>Goals: {{this.goals}}</p>
+                    <p>Barriers: {{this.barriers}}</p>  
+                    <p>Convicted of Crime: {{this.crime_convictions}}</p>
+                    <p>Details of Crime: {{this.crime_details}}</p>         
+                    <p>Convicted of Felony: {{this.felony_convictions}}</p>
+                    <p>Pending Convictions: {{this.pending_convictions}}</p>  
+                    <p>Pending Details: {{this.pending_details}}</p>
+                    <p>Sex Offender: {{this.sex_offender}}</p> 
+                    <p>Probation or Paroel: {{this.probation_parole}}</p> 
+                    <p>Signed Consent/Confidentiality Agreement: {{this.agreed}}</p>
+                    <p>Have Resume ?: {{this.have_resume}}</p>
+                    <p>Able to Create Resume ?: {{this_I_can_create_resume}}</p> 
+                    <p>Have Interview Skill ?: {{this.__posess_interview_skills}}</p>
+                    <p>Have Support system ?: {{this.support_system}}</p>
+                    <p>Have Networking Skills ?: {{this.networking_skills}}</p>   
+                    <p>Have Job Search Skills ?: {{this.job_search_skills}}</p>
+                    <p>Have Workplace Conflict Resolution Skills ?: {{this.workplace_conflict_resolution_skills}}</p> 
+                    <p>Have Teamwork Skills ?: {{this.teamwork_skills}}</p>
+                    <p>Have Job Maintenance Skills ?: {{this.job_maintenane_skills}}</p>
+                    <p>Have Career Goals ?: {{this.have_career_goals}}</p>
+                    <p>Know How to Power Computer ?: {{this.power_computer}}</p>
+                    <p>Know How to Operate Computer ?: {{this.operate_computer}}</p>
+                    <p>Have Typing Skills ?: {{this.typing_skills}}</p>
+                    <p>Can Use Word Processor ?: {{this.use_word}}</p>
+                    <p>Can Open Internet Browser ?: {{this.open_internet_browser}}</p>
+                    <p>Have Email ?: {{this.have_email}}</p>
+                    <p>Can Google Something ?: {{this.google_something}}</p>
+                    <p>Want to Improve Computer Skills ?: {{this.improve_computer_skills}}</p>                                      
+                </div>
+            </div>
+        
         {{/each}}
 </div>
