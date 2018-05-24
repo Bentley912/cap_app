@@ -4,6 +4,8 @@
 // Dependencies
 // =============================================================
 var path = require("path");
+var result = require("../server.js");
+var db = require("../models");
 // Routes
 // =============================================================
 module.exports = function(app) {
@@ -49,5 +51,12 @@ module.exports = function(app) {
   }); 
   app.get("/computer_survey", function(req, res) {
     res.sendFile(path.join(__dirname + "/../public/computer_survey.html"));    
+  }); 
+  app.get("/applicants", function(req, res) {
+    db.Applicant.findAll({})
+    .then(function(appPost) {
+      console.log(appPost);
+      res.render('applicants', {applicants: appPost});
+    });
   }); 
 }

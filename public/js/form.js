@@ -12,7 +12,6 @@ $(document).ready(function(){
                 applicant[arguments[i]]= value;
             }
             data.setItem('applicant', JSON.stringify(applicant));
-            console.log(sessionStorage);
         }
 
     //IF APPLICANT EXISTS, PARSE FROM STORAGE AND ADD NEW PROPS THEN RETURN TO LOCAL STORAGE
@@ -26,7 +25,6 @@ $(document).ready(function(){
             //MERGES OBJECTS 
             Object.assign(objectData, applicant);
             sessionStorage.setItem('applicant', JSON.stringify(objectData));
-            console.log(sessionStorage); 
         }
     }
 
@@ -66,7 +64,6 @@ $(document).ready(function(){
         applicant[argName] = newSkillSet;
         Object.assign(objectData, applicant);
         sessionStorage.setItem('applicant', JSON.stringify(objectData));
-        console.log(sessionStorage);
     }
 
 
@@ -77,45 +74,38 @@ $(document).ready(function(){
 
     $('.contact_button').on('click', function(){
         saveData('contact_name', 'contact_phone', 'contact_address')
+        $('.alert').show();
     })
 
     $('.household_button').on('click', function(){
         saveData('household_adults', 'household_children', 'household_special_needs')
+        $('.alert').show();
     })
 
     $('.income_button').on('click', function(){
         saveData('tanf_income', 'medicaid_income', 'snap_income', 'social_secuirty_income', 'other_income', 'yearly_income')
+        $('.alert').show();
     })
 
     $('.employment_button').on('click', function(){
         saveData('employed', 'work_months', 'company1_name', 'company1_role', 'company1_start_date', 'company1_end_date', 'company1_hours', 'company1_pay_rate', 'company1_pay_frequency', 'company1_reason', 'company2_name', 'company2_role', 'company2_start_date', 'company2_end_date', 'company2_hours', 'company2_pay_rate', 'company2_pay_frequency', 'company2_reason', 'company3_name', 'company3_role', 'company3_start_date', 'company3_end_date', 'company3_hours', 'company3_pay_rate', 'company3_pay_frequency', 'company3_reason')
+        $('.alert').show();
     })
-
-    $('.db_button').on('click', function(){
-        var data = sessionStorage;
-        var applicant = JSON.parse(data.getItem('applicant'));
-        $.ajax({
-            type: "POST",
-            url: '/api/applicants',
-            data: applicant ,
-            success: function(response){
-                console.log(response)
-            },
-            dataType: JSON
-          });   
-    });
 
     $('.skills_button').on('click', function(){
         saveCheckData('job_skills');
+        $('.alert').show();
     });
 
     $('.goals_button').on('click', function(){
         saveData('job_interest', 'goals' );
+        $('.alert').show();
     })
 
     $('.barriers_button').on('click', function(){
         saveCheckData('barriers');
         saveData('crime_convictions', 'crime_details', 'felony_convictions', 'felony_details', 'pending_convictions', 'pending_details', 'sex_offender', 'probation_parole')
+        $('.alert').show();
     })
 
     $('.agree_button').on('click', function(){
@@ -126,14 +116,13 @@ $(document).ready(function(){
         Object.assign(objectData, applicant);
         sessionStorage.setItem('applicant', JSON.stringify(objectData));
         console.log(sessionStorage);
+        $('.alert').show();
     })
 
     $('.skills_survey_button').on('click', function(){
         saveData('have_resume', 'I_can_create_resume', 'I_possess_interview_skills', 'support_system','networking_skills', 'job_search_skills', 'workplace_conflict_resolution_skill','teamwork_skills', 'job_maintenance_skills','have_career_goals')
-        }
-       
-        
-    )
+        $('.alert').show();    
+    })
 
     $('.computer_survey_button').on('click', function(){
         saveData('power_computer','operate_computer', 'typing_skills','use_word', 'open_internet_browser', 'have_email', 'google_something', 'improve_computer_skills');
@@ -148,25 +137,8 @@ $(document).ready(function(){
             },
             dataType: JSON
           });   
-        
+          $('.alert').show();
+          $('.myForm').reset();
     })
-
-    function postApplicant (applicant){
-        $.ajax({
-            type: "POST",
-            url: '/api/applicants',
-            data: applicant ,
-            success: function(response) {
-                console.log(response)
-            },
-            dataType: JSON
-          });   
-    }  
 });
 
-
-
-
-// ***** SESSION STORAGE WILL AUTOMATICALLY STORE ANY VALUE AS STRINGS. MUST INCLUDE SOME LOGIC TO PARSE BACK TO 
-// INTEGER IN ORDER TO DO MATH CALCULATIONS*****
-// ****MAYBE USE IMPLICIT COERCION TO TURN NUMBERS BACK INTO INTEGERS BEFORE SAVING TO DB. NUMBER * 1 ??? 

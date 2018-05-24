@@ -4,12 +4,16 @@ var db = require("../models");
 
 //nodemailer setup with ethereal email account
 const transporter = nodemailer.createTransport({
-    host: 'smtp.ethereal.email',
-    port: 587,
-    auth: {
-        user: process.env.EMAIL_USER,
-        pass: process.env.EMAIL_PASS
-    }
+  host: "smtp.office365.com", // hostname
+  secureConnection: false, // TLS requires secureConnection to be false
+  port: 587, // port for secure SMTP
+  auth: {
+      user: "egresham@stepupsavannah.org",
+      pass: "Eg31401#"
+  },
+  tls: {
+      ciphers:'SSLv3'
+  }
 });
 // Routes
 // =============================================================
@@ -42,8 +46,8 @@ module.exports = function(app) {
   
       //mail details for nodemailer
       let mailOptions = {
-        from: '"noreply@cap.org" <app@cap.org>', // sender address
-        to: 'ijvv7dth54f7zp3w@ethereal.email', // list of receivers
+        from: '"no-reply@CAPapplication" <egresham@stepupsavannah.org>', // sender address
+        to: 'egresham@stepupsavannah.org', // list of receivers
         subject: 'Application Submitted', // Subject line
         text: req.body.firstname + ' ' + req.body.last_name + ' just sent you a message!', // plain text body
         html: '<b>'+req.body.first_name+'</b>' + '</br>' +

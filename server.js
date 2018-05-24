@@ -6,6 +6,7 @@ var express = require("express");
 var bodyParser = require("body-parser");
 var db = require("./models");
 var http = require("http");
+var exphbs = require("express-handlebars");
 // ==============================================================================
 // EXPRESS CONFIGURATION
 // This sets up the basic properties for our express server
@@ -23,6 +24,8 @@ app.use(bodyParser.json({ type: "application/vnd.api+json" }));
 
 // Static directory
 app.use(express.static("./public"));
+app.engine("handlebars", exphbs({ defaultLayout: "main" }));
+app.set("view engine", "handlebars");
 // ================================================================================
 // ROUTER
 // The below points our server to a series of "route" files.
@@ -30,6 +33,9 @@ app.use(express.static("./public"));
 // ================================================================================
 require("./routes/api-routes")(app);
 require("./routes/html-routes")(app);
+
+// Set up Handlebars 
+
 
 // ==============================================================================
 // LISTENER
