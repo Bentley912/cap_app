@@ -8,8 +8,8 @@ const transporter = nodemailer.createTransport({
   secureConnection: false, // TLS requires secureConnection to be false
   port: 587, // port for secure SMTP
   auth: {
-      user: "egresham@stepupsavannah.org",
-      pass: "Eg31401#"
+      user: process.env.EMAIL_USER,
+      pass: process.env.EMAIL_PASS
   },
   tls: {
       ciphers:'SSLv3'
@@ -47,12 +47,15 @@ module.exports = function(app) {
       //mail details for nodemailer
       let mailOptions = {
         from: '"no-reply@CAPapplication" <egresham@stepupsavannah.org>', // sender address
-        to: 'egresham@stepupsavannah.org', // list of receivers
+        to: process.env.EMAIL_USER, // list of receivers
         subject: 'Application Submitted', // Subject line
         text: req.body.firstname + ' ' + req.body.last_name + ' just sent you a message!', // plain text body
         html: '<b>'+req.body.first_name+'</b>' + '</br>' +
         ''  + req.body.last_name   + '</br>' +
-        'DOB: '
+        'DOB: ' + req.body.birth_date + '</br>' + 
+        'Phone Number: ' + req.body.phone + '</br>' +
+        'Email: ' + req.body.email + '</br>' +
+        'Registration Date: ' + req.body.createdAt 
         // html body
       };
       transporter.sendMail(mailOptions, (error, info) => {
