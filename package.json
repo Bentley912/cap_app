@@ -22,10 +22,11 @@
     "mysql2": "^1.4.2",
     "nodemailer": "^4.3.1",
     "path": "^0.12.7",
-    "sequelize": "^4.37.10"
+    "sequelize": "^4.22.5"
   },
   "devDependencies": {
     "chai": "^4.1.2",
-    "mocha": "^4.0.1"
+    "mocha": "^4.0.1",
+    "zombie": "^5.0.7"
   }
 }
